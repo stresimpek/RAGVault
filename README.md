@@ -74,7 +74,7 @@ RAGVault processes PDFs into vector embeddings, retrieves the most relevant pass
 
 ## LLM Inference
 - Groq API
-- Llama / Mixtral models
+- Llama
 
 ## Infrastructure
 - Docker
