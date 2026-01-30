@@ -91,6 +91,79 @@ graph LR
 
 ---
 
+# ⚙️ Installation & Setup
+
+Follow these steps to get **RAGVault** running locally using Docker.
+
+## Prerequisites
+
+- Docker Desktop installed and running
+- Git installed
+
+---
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/RAGVault.git
+cd RAGVault
+```
+
+---
+
+## 2️⃣ Configure Environment Variables
+
+Create a `.env` file in the root directory.
+
+You can copy from example:
+
+```bash
+cp .env.example .env
+```
+
+Or create manually.
+
+### Required `.env` content
+
+```ini
+# Groq API Key (https://console.groq.com/keys)
+GROQ_API_KEY=gsk_your_api_key_here
+
+# Frontend → Backend API URL (Docker default)
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+---
+
+## 3️⃣ Run with Docker 🐳
+
+Build and start all services:
+
+```bash
+docker-compose up -d --build
+```
+
+This will start:
+
+- Frontend (Next.js)
+- Backend (FastAPI)
+- Vector Database (Qdrant)
+
+---
+
+## 4️⃣ Access the Application
+
+Frontend UI  
+http://localhost:3000
+
+Backend API Docs  
+http://localhost:8000/docs
+
+Qdrant Dashboard  
+http://localhost:6333/dashboard
+
+---
+
 # 🚀 Application Usage
 
 ## 1️⃣ Upload Documents
