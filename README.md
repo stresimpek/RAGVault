@@ -168,7 +168,7 @@ The backend will automatically:
 - generate embeddings
 - store vectors in Qdrant
 
-<video src="docs/upload-demo.mp4" controls width="700"></video>
+![Upload](assets/demo-upload.gif)
 
 ---
 
@@ -182,7 +182,7 @@ Deletion will:
 - delete associated embeddings from the vector database
 - immediately exclude the document from future RAG answers
 
-<video src="docs/delete-demo.mp4" controls width="700"></video>
+![Delete](assets/demo-delete.gif)
 
 ---
 
@@ -203,7 +203,7 @@ The answer panel displays:
 - page number
 - clickable source button
 
-<video src="docs/chat-demo.mp4" controls width="700"></video>
+![Chat](assets/demo-chat.gif)
 
 ---
 
@@ -219,7 +219,7 @@ Viewer behavior:
 - can be closed or reopened anytime
 - clicking a source automatically reopens the viewer and navigates to the correct page
 
-<video src="docs/pdf-viewer-demo.mp4" controls width="700"></video>
+![Source](assets/demo-pdf.gif)
 
 ---
 
