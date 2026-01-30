@@ -1,6 +1,6 @@
-# 🧠 RAGVault — Intelligent Document Analysis with RAG
+# RAGVault — Intelligent Document Analysis with RAG
 
-> **Intelligent Document Analysis with Retrieval-Augmented Generation (RAG)**  
+> **Document Analysis with Retrieval-Augmented Generation (RAG)**  
 > *Chat with your PDF documents accurately with verifiable sources.*
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
@@ -13,35 +13,30 @@
 
 # 📖 Overview
 
-**RAGVault** is a full-stack Retrieval-Augmented Generation (RAG) application for analyzing and querying large collections of PDF documents using AI.
+**RAGVault** is a full-stack Retrieval-Augmented Generation (RAG) application for analyzing and querying large collections of PDF documents using AI. Built for users that need to quickly extract information from **many documents at once** without manually reading everything.
 
-This system is designed for scenarios where users need to quickly extract precise information from **many documents at once** without manually reading everything.
+### Example Use Cases
 
-### 🎯 Example Use Cases
-
-- Searching answers across hundreds or thousands of PDFs
-- Research paper exploration and citation checking
+- Searching answers across dozens of PDFs
+- Research paper exploration
 - Technical document Q&A
 - Internal knowledge base search
 - Compliance and policy document lookup
 - Academic literature review assistant
 
-RAGVault processes PDFs into vector embeddings, retrieves the most relevant passages, and generates answers grounded in the source text — complete with **direct quoted citations** and an interactive PDF viewer for verification.
+RAGVault processes PDFs into vector embeddings, retrieves the most relevant passages, and generates answers, complete with **direct quoted citations** and a PDF viewer for verification.
 
 ---
 
 # ✨ Features
 
-- 📄 Multi-document PDF ingestion
-- 🧠 Retrieval-Augmented Generation (RAG) Q&A
-- 📍 Grounded answers with quoted sources
-- 👁️ Split-view chat + PDF reader
-- 🔎 Click-to-open citation viewer
-- 🎯 Automatic page jump to source
-- 🗑️ File and vector index deletion
-- ⚡ FastAPI backend
-- 🌐 Next.js frontend
-- 🐳 Fully Dockerized stack
+- Multi-document PDF ingestion
+- Retrieval-Augmented Generation (RAG) Q&A
+- Grounded answers with quoted sources
+- Split-view chat + PDF reader
+- FastAPI backend
+- Next.js frontend
+- Fully Dockerized stack
 
 ---
 
