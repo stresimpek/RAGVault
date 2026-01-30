@@ -3,11 +3,18 @@
 > **Document Analysis with Retrieval-Augmented Generation (RAG)**  
 > *Chat with your PDF documents accurately with verifiable sources.*
 
-![Project Status](https://img.shields.io/badge/status-active-success.svg)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
 ![Next JS](https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+
 ![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-bc1439)
+![Groq](https://img.shields.io/badge/Groq-AI_Inference-f55036)
+![Llama 3](https://img.shields.io/badge/Model-Llama_3-0467DF)
 
 ---
 
@@ -73,21 +80,6 @@ RAGVault processes PDFs into vector embeddings, retrieves the most relevant pass
 - Docker
 - Docker Compose
 - Multi-container architecture
-
----
-
-# 🏗 Architecture
-
-```mermaid
-graph LR
-    User --> FE[Next.js Frontend]
-    FE --> BE[FastAPI Backend]
-    BE --> Parser[PDF Parser & Chunker]
-    BE --> DB[(Qdrant Vector DB)]
-    BE --> LLM[Groq LLM API]
-    LLM --> BE
-    BE --> FE
-```
 
 ---
 
