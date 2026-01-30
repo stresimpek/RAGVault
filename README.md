@@ -160,7 +160,8 @@ http://localhost:6333/dashboard
 
 ## 1️⃣ Upload Documents
 
-Users can upload PDF files through the interface.  
+Users can upload PDF files through the interface.
+
 The backend will automatically:
 
 - parse document text
