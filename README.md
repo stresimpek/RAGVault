@@ -1,7 +1,7 @@
 # 🧠 RAGVault — Intelligent Document Analysis with RAG
 
 > **Intelligent Document Analysis with Retrieval-Augmented Generation (RAG)**  
-> *Chat with your PDF documents securely, accurately, and interactively.*
+> *Chat with your PDF documents accurately with verifiable sources.*
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
@@ -13,61 +13,66 @@
 
 # 📖 Overview
 
-**RAGVault** is a full-stack AI application that enables users to upload PDF documents and perform Question & Answer (Q&A) using Retrieval-Augmented Generation (RAG).
+**RAGVault** is a full-stack Retrieval-Augmented Generation (RAG) application for analyzing and querying large collections of PDF documents using AI.
 
-The system parses documents, builds vector embeddings, stores them in Qdrant Vector Database, and uses LLMs via Groq API to generate grounded answers with verifiable citations.
+This system is designed for scenarios where users need to quickly extract precise information from **many documents at once** without manually reading everything.
 
-A key feature is the Split-View PDF Source Viewer — users can click citations and instantly jump to the exact page in the document with highlight support.
+### 🎯 Example Use Cases
 
-Designed for **large-scale multi-document RAG (hundreds to thousands of PDFs).**
+- Searching answers across hundreds or thousands of PDFs
+- Research paper exploration and citation checking
+- Technical document Q&A
+- Internal knowledge base search
+- Compliance and policy document lookup
+- Academic literature review assistant
+
+RAGVault processes PDFs into vector embeddings, retrieves the most relevant passages, and generates answers grounded in the source text — complete with **direct quoted citations** and an interactive PDF viewer for verification.
 
 ---
 
 # ✨ Features
 
-- 📄 Seamless PDF ingestion & chunking
-- 🧠 Context-aware RAG question answering
-- 📍 Precision source citations
-- 👁️ Split-view PDF Source Viewer
-- 🔎 Click-to-jump citation navigation
-- 🎯 Highlighted source text anchors
-- 🗑️ Knowledge base file management
-- ⚡ FastAPI high-performance backend
-- 🌐 Next.js modern frontend UI
-- 🐳 Fully Dockerized microservice stack
+- 📄 Multi-document PDF ingestion
+- 🧠 Retrieval-Augmented Generation (RAG) Q&A
+- 📍 Grounded answers with quoted sources
+- 👁️ Split-view chat + PDF reader
+- 🔎 Click-to-open citation viewer
+- 🎯 Automatic page jump to source
+- 🗑️ File and vector index deletion
+- ⚡ FastAPI backend
+- 🌐 Next.js frontend
+- 🐳 Fully Dockerized stack
 
 ---
 
 # 🛠 Tech Stack
 
 ## Frontend
-- Next.js 14 (React)
+- Next.js 14
+- React
 - Tailwind CSS
-- React Hooks
-- Custom PDF Viewer (iframe + anchor highlight)
-- Lucide Icons
+- Custom PDF Viewer Panel
 - Axios
+- Lucide Icons
 
 ## Backend
 - FastAPI
 - Python
-- Custom RAG pipeline
-- PDF parsing & chunking
-- Embedding generation
-- Citation mapping logic
+- Custom PDF parsing & chunking pipeline
+- RAG retrieval engine
 
-## AI / RAG Layer
-- Retrieval-Augmented Generation (RAG)
-- Vector similarity search
-- Source-grounded answer generation
+## AI Layer
+- Retrieval-Augmented Generation
+- Embedding + similarity search
+- Source citation mapping
 
 ## Vector Database
-- Qdrant Vector DB
-- Persistent storage volume
+- Qdrant Vector Database
+- Persistent vector storage
 
 ## LLM Inference
 - Groq API
-- Llama 3 / Mixtral models
+- Llama / Mixtral models
 
 ## Infrastructure
 - Docker
@@ -91,96 +96,70 @@ graph LR
 
 ---
 
-# 🎬 Demo Video
+# 🚀 Application Usage
 
-📺 Watch full walkthrough:
+## 1️⃣ Upload Documents
 
-https://your-demo-video-link
+Users can upload PDF files through the interface.  
+The backend will automatically:
 
-Recommended demo flow:
-- Upload PDF
-- Index documents
-- Ask question
-- Show answer with citation
-- Click source
-- PDF viewer jumps + highlights
+- parse document text
+- split into semantic chunks
+- generate embeddings
+- store vectors in Qdrant
 
----
-
-# 🖼 Screenshots
-
-```md
-## Interface
-![UI](docs/ui.png)
-
-## Source Highlight Viewer
-![PDF](docs/pdf-viewer.png)
-```
+<video src="docs/upload-demo.mp4" controls width="700"></video>
 
 ---
 
-# ⚙️ Installation
+## 2️⃣ Delete Documents
 
-## Requirements
+Uploaded documents can be removed from the knowledge base.
 
-- Docker Desktop
-- Git
+Deletion will:
 
----
+- remove the file from storage
+- delete associated embeddings from the vector database
+- immediately exclude the document from future RAG answers
 
-# 🐳 Docker Setup (Recommended)
-
-## 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/your-username/RAGVault.git
-cd RAGVault
-```
+<video src="docs/delete-demo.mp4" controls width="700"></video>
 
 ---
 
-## 2️⃣ Configure Environment Variables
+## 3️⃣ Chat with RAG
 
-Create `.env` file:
+Users can ask questions about the uploaded documents.
 
-```bash
-GROQ_API_KEY=gsk_your_api_key_here
-```
+The system will:
 
----
+- retrieve relevant chunks
+- generate an AI answer
+- include **quoted source text**
+- show exactly which document and page the answer came from
 
-## 3️⃣ Build & Run
+The answer panel displays:
+- AI response
+- source quote
+- page number
+- clickable source button
 
-```bash
-docker-compose up -d --build
-```
-
----
-
-## 4️⃣ Access Services
-
-Frontend → http://localhost:3000  
-Backend Docs → http://localhost:8000/docs  
-Qdrant Dashboard → http://localhost:6333/dashboard
+<video src="docs/chat-demo.mp4" controls width="700"></video>
 
 ---
 
-# 🚀 Usage — Step by Step
+## 4️⃣ Interactive Source PDF Viewer
 
-## Step 1 — Upload Documents
-Upload PDF files via UI → system parses, chunks, embeds, and stores vectors.
+Each answer source can be opened in the PDF viewer panel.
 
-## Step 2 — Manage Knowledge Base
-View indexed documents in sidebar → delete to remove vectors + files.
+Viewer behavior:
 
-## Step 3 — Ask Questions
-Type query → RAG retrieves relevant chunks → LLM generates grounded answer.
+- opens on the right side (split view)
+- jumps directly to the cited page
+- highlights anchor text
+- can be closed or reopened anytime
+- clicking a source automatically reopens the viewer and navigates to the correct page
 
-## Step 4 — Verify Sources
-Click **Check Source** → PDF viewer opens → jumps to page → highlights anchor text.
-
-## Step 5 — Interactive Review
-Toggle viewer panel → navigate between sources → verify grounding.
+<video src="docs/pdf-viewer-demo.mp4" controls width="700"></video>
 
 ---
 
@@ -220,22 +199,6 @@ GET    /files
 DELETE /files/{filename}
 POST   /chat
 ```
-
----
-
-# 📈 Roadmap
-
-- [ ] Hybrid search (BM25 + vector)
-- [ ] Multi-query retrieval
-- [ ] Confidence scoring
-- [ ] Streaming answers
-- [ ] Multi-user support
-
----
-
-# 🤝 Contributing
-
-Pull requests are welcome. Please open an issue first for major changes.
 
 ---
 
